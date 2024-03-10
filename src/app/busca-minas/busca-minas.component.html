@@ -1,0 +1,12 @@
+<!-- busca-minas.component.html -->
+<table class="tablero">
+  <tr *ngFor="let fila of tablero; let i = index">
+    <td *ngFor="let casilla of fila; let j = index" class="casilla">
+      <app-casilla
+        [tieneMina]="casilla.tieneMina"
+        [minasCercanas]="casilla.minasCercanas"
+        (clicCasilla)="onCasillaClic(i, j)"
+      ></app-casilla>
+    </td>
+  </tr>
+</table>

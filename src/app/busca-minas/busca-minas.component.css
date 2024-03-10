@@ -1,0 +1,19 @@
+/* busca-minas.component.css */
+.tablero {
+  border-collapse: collapse;
+  margin-top: 200px;
+  margin-left: 640px;
+}
+
+.casilla {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.casilla:hover {
+  background-color: lightgray;
+}

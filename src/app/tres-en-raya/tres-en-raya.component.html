@@ -1,0 +1,29 @@
+<div class="container d-flex align-items-center justify-content-center mt-5" [ngClass]="{ 'blur-background': mostrarMensajeGanador }">
+    <div class="turno" style="color: orange">{{ mensajeTurno }}</div>
+        <div class="container d-flex align-items-center justify-content-center mt-5">
+            <div id="tablero" >
+                <table>
+                    <tr>
+                    <td (click)="seleccionarCelda(0)" [style.color]="obtenerColorCelda(0)">{{ obtenerContenidoCelda(0) }}</td>
+                    <td (click)="seleccionarCelda(1)" [style.color]="obtenerColorCelda(1)">{{ obtenerContenidoCelda(1) }}</td>
+                    <td (click)="seleccionarCelda(2)" [style.color]="obtenerColorCelda(2)">{{ obtenerContenidoCelda(2) }}</td>
+                </tr>
+                <tr>
+                    <td (click)="seleccionarCelda(3)" [style.color]="obtenerColorCelda(3)">{{ obtenerContenidoCelda(3) }}</td>
+                    <td (click)="seleccionarCelda(4)" [style.color]="obtenerColorCelda(4)">{{ obtenerContenidoCelda(4) }}</td>
+                    <td (click)="seleccionarCelda(5)" [style.color]="obtenerColorCelda(5)">{{ obtenerContenidoCelda(5) }}</td>
+                </tr>
+                <tr>
+                    <td (click)="seleccionarCelda(6)" [style.color]="obtenerColorCelda(6)">{{ obtenerContenidoCelda(6) }}</td>
+                    <td (click)="seleccionarCelda(7)" [style.color]="obtenerColorCelda(7)">{{ obtenerContenidoCelda(7) }}</td>
+                    <td (click)="seleccionarCelda(8)" [style.color]="obtenerColorCelda(8)">{{ obtenerContenidoCelda(8) }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <button class="nuevojuego" (click)="nuevoJuego()" style="color: orange">Nuevo juego</button>
+</div>
+<div class="ganador" *ngIf="mostrarMensajeGanador">
+    <h2>Jugador {{ ganador }} ha ganado!</h2>
+    <button (click)="nuevoJuego()">Nuevo Juego</button>
+</div>

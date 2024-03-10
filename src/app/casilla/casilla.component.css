@@ -1,0 +1,8 @@
+/* casilla.component.css */
+.casilla {
+    width: 50px; /* ajusta este valor según el tamaño deseado */
+    height: 50px; /* ajusta este valor según el tamaño deseado */
+    border: 1px solid black; /* u otros estilos de borde */
+    /* Añade cualquier otro estilo necesario */
+  }
+  

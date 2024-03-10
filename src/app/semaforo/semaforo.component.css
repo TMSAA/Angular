@@ -1,0 +1,39 @@
+.circulo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 24px;
+    border: 2px solid black;
+}
+.verde{
+    background-color: green;
+}
+.amarillo{
+    background-color:  yellow;
+}
+.rojo{
+    background-color:  red;
+    
+}
+.contenedor{
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    background-color: gray;
+    margin: 15px;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.cuenta-atras{
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+
+}
+.blanco{
+    background-color: white;
+}

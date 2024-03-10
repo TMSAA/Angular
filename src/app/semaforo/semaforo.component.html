@@ -1,0 +1,14 @@
+
+<div class="contenedor">
+    <div *ngIf="valor==2;else vacio" class="circulo verde"> </div>
+    <div *ngIf="valor==1;else vacio" class="circulo amarillo"></div>
+    <div *ngIf="valor==0;else vacio" class="circulo rojo"></div>
+    <span class="cuenta-atras">{{valor}}</span>
+    <button (click)="sumar()">Comenzar</button>
+    <button (click)="restar()">Restar</button>
+</div>  
+
+
+<ng-template #vacio>
+    <div class="circulo blanco"></div>
+</ng-template>

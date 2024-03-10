@@ -1,0 +1,34 @@
+<div class="marcador-jugador">
+    <p>JUGADOR: </p>
+    <div class="vidas-jugador">
+        <p *ngFor="let i of repetir(vidasJugador)">
+            <img src="assets/images/corazon.jpeg" alt="Imagen única" class="vida1">
+        </p>
+    </div>
+</div>
+<div class="marcador-maquina">
+    <p>MAQUINA: </p>
+    <div class="vidas-maquina">
+        <p *ngFor="let i of repetir(vidasMaquina)">
+            <img src="assets/images/corazon.jpeg" alt="Imagen única" class="vida2">
+        </p>
+    </div>
+</div>
+
+<div class="contenedor-botones">
+    <button class="Boton Boton-izquierda" [disabled]="rotacionEnCurso" (click)="iniciarRotacionEnCentro('boton1')">
+        <img src="/assets/images/piedra.jpg" alt="Piedra" class="Imagen">
+    </button>
+    
+    <button class="Boton Boton-medio" [disabled]="rotacionEnCurso" (click)="iniciarRotacionEnCentro('boton2')">
+        <img src="/assets/images/avion-papel.jpg" alt="Papel" class="Imagen">
+    </button>
+    
+    <button class="Boton Boton-derecha" [disabled]="rotacionEnCurso" (click)="iniciarRotacionEnCentro('boton3')">
+        <img src="/assets/images/tijera3.jpeg" alt="Tijera" class="Imagen">
+    </button>
+</div>
+
+<div id="contenedor-imagen" [style.display]="mostrarImagenes ? 'block' : 'none'">
+    <img [src]="imagenes[indiceActual]" alt="Imagen {{ indiceActual + 1 }}" class="Imagen-Rotacion">
+</div>

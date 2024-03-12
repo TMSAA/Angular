@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class BuscaMinasComponent {
   tablero: any[][] = [];
-  minas: Set<string> = new Set<string>(); // Almacena las posiciones de las minas
-  casillasReveladas: Set<string> = new Set<string>(); // Almacena las posiciones de las casillas ya reveladas
+  minas: Set<string> = new Set<string>(); 
+  casillasReveladas: Set<string> = new Set<string>(); 
 
   constructor() {
     this.inicializarTablero();
@@ -26,7 +26,6 @@ export class BuscaMinasComponent {
   }
 
   generarMinas() {
-    // Generar 10 minas aleatorias
     let minasGeneradas = 0;
     while (minasGeneradas < 10) {
       const fila = Math.floor(Math.random() * 8);
@@ -64,40 +63,57 @@ export class BuscaMinasComponent {
   }
 
   onCasillaClic(fila: number, columna: number) {
-    const casilla = this.tablero[fila][columna];
-    if (!casilla.revelada) {
-      casilla.revelada = true;
-      if (casilla.tieneMina) {
-        // Game over, mostrar todas las minas
-        this.minas.forEach(posicion => {
-          const [fila, columna] = posicion.split('-').map(Number);
-          this.tablero[fila][columna].revelada = true;
-        });
-      } else {
-        // Descubrir casillas adyacentes si no hay mina
-        this.descubrirCasillasAdyacentes(fila, columna);
+  const casilla = this.tablero[fila][columna];
+  if (!casilla.revelada) {
+    casilla.revelada = true;
+    if (casilla.tieneMina) {
+      this.mostrarTodasMinas();
+    }
+  }
+  this.ganar();
+}
+
+mostrarTodasMinas() {
+  this.minas.forEach(posicion => {
+    const [fila, columna] = posicion.split('-').map(Number);
+    this.tablero[fila][columna].revelada = true;
+  });
+}
+  
+ganar(): boolean {
+  let totalCasillas = 64; 
+  let casillasReveladas = 0;
+
+  for (let fila = 0; fila < 8; fila++) {
+    for (let columna = 0; columna < 8; columna++) {
+      if (this.tablero[fila][columna].revelada) {
+        casillasReveladas++;
       }
     }
   }
 
-  descubrirCasillasAdyacentes(fila: number, columna: number) {
-    const deltas = [-1, 0, 1];
-    for (const dx of deltas) {
-      for (const dy of deltas) {
-        const nx = fila + dx;
-        const ny = columna + dy;
-        if (this.esCasillaValida(nx, ny) && !this.tablero[nx][ny].tieneMina && !this.tablero[nx][ny].revelada) {
-          this.tablero[nx][ny].revelada = true;
-          if (this.tablero[nx][ny].minasCercanas === 0) {
-            this.descubrirCasillasAdyacentes(nx, ny);
-          }
-        }
-      }
-    }
+  let casillasSinMinas = totalCasillas - this.minas.size;
+  if (casillasReveladas === casillasSinMinas) {
+    alert('¡Felicidades, has ganado!');
+    return true;
+  } else {
+    return false;
   }
-  
+}
+
+
   esCasillaValida(fila: number, columna: number): boolean {
     return fila >= 0 && fila < 8 && columna >= 0 && columna < 8;
+  }
+  
+  reiniciarJuego() {
+    this.tablero = [];
+    this.minas.clear();
+    this.casillasReveladas.clear();
+    
+    this.inicializarTablero();
+    this.generarMinas();
+    this.calcularMinasCercanas();
   }
   
 }

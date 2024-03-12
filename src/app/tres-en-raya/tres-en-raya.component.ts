@@ -37,7 +37,7 @@ export class TresEnRayaComponent {
     this.mensajeTurno = this.jugadorActual === 1 ? 'Turno del Jugador 1' : 'Turno del Jugador 2';
   }
 
-  verificarTresEnRaya(){// Comprobación de las filas
+  verificarTresEnRaya(){
     for (let i = 0; i < 9; i += 3) {
       if (this.mapa[i] !== 0 && this.mapa[i] === this.mapa[i + 1] && this.mapa[i] === this.mapa[i + 2]) {
         this.ganador = this.mapa[i];
@@ -46,7 +46,7 @@ export class TresEnRayaComponent {
       }
     }
 
-    // Comprobación de las columnas
+    
     for (let i = 0; i < 3; i++) {
       if (this.mapa[i] !== 0 && this.mapa[i] === this.mapa[i + 3] && this.mapa[i] === this.mapa[i + 6]) {
         this.ganador = this.mapa[i];
@@ -55,7 +55,7 @@ export class TresEnRayaComponent {
       }
     }
 
-    // Comprobación de las diagonales
+    
     if (this.mapa[0] !== 0 && this.mapa[0] === this.mapa[4] && this.mapa[0] === this.mapa[8]) {
       this.ganador = this.mapa[0];
       this.mostrarMensajeGanador = true;
@@ -67,16 +67,16 @@ export class TresEnRayaComponent {
       return;
     }
 
-    // Si no se encuentra un tres en raya, no hay ganador todavía
+    
     this.ganador = 0;
   }
   obtenerColorCelda(celda: number) {
     if (this.mapa[celda] === 1) {
-      return 'orange'; // Cambia a amarillo si el jugador 1 seleccionó esta celda
+      return 'orange'; 
     } else if (this.mapa[celda] === 2) {
-      return 'white'; // Cambia a azul si el jugador 2 seleccionó esta celda
+      return 'white'; 
     } else {
-      return 'black'; // Cambia a negro si la celda está vacía
+      return 'black'; 
     }
   }
   nuevoJuego() {

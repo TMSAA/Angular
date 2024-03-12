@@ -4,8 +4,7 @@
     justify-content: space-between;
     align-items: center;
     width: 900px;
-    margin-top: 20px; /* Modificado para reducir el espacio entre el contenedor de botones y el contenedor de imágenes */
-    background-color: aqua;
+    margin-top: 20px; 
     margin-top: 600px;
     margin-left: 430px;
 }
@@ -31,21 +30,20 @@
 }
 
 
-/*Ajustes para los marcadores*/
 .marcador-jugador {
     position: absolute;
-    top: 10px; /* Ajusta según sea necesario */
-    left: 10px; /* Ajusta según sea necesario */
+    top: 10px; 
+    left: 10px; 
     display: flex;
-    flex-direction: row-reverse; /* Cambia el orden de las vidas para que se vean hacia la derecha */
+    flex-direction: row-reverse; 
 }
 
 .marcador-maquina {
     position: absolute;
-    top: 10px; /* Ajusta según sea necesario */
-    right: 10px; /* Ajusta según sea necesario */
+    top: 10px; 
+    right: 10px; 
     display: flex;
-    flex-direction: row; /* Por defecto las vidas se verán hacia la izquierda */
+    flex-direction: row; 
 }
 
 .vidas-jugador,
@@ -53,12 +51,12 @@
     display: flex;
 }
 
-/* Estilos para los corazones */
+
 .vida1,
 .vida2 {
-    width: 20px; /* Ajusta el tamaño de los corazones según sea necesario */
-    height: 20px; /* Ajusta el tamaño de los corazones según sea necesario */
-    margin: 0 2px; /* Espacio entre los corazones */
+    width: 20px; 
+    height: 20px; 
+    margin: 0 2px; 
 }
 #contenedor-imagen {
     position: absolute;
@@ -68,11 +66,11 @@
     margin-left: 140px;
 }
 #contenedor-imagen img {
-    width: 250px; /* Ajusta el tamaño del ancho según sea necesario */
-    height: 250px; /* Ajusta el tamaño de la altura según sea necesario */
+    width: 250px; 
+    height: 250px; 
 }
 
-/* Animación de parpadeo */
+
 @keyframes parpadeo {
     50% {
         transform: scale(1.05);

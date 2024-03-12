@@ -73,49 +73,38 @@ export class PiedraPapelTijeraComponent {
   juego(jugador: number, maquina: number): void {
 
     if (jugador === maquina) {
-        // Empate
     } else {
         switch (true) {
             case jugador === 1 && maquina === 3:
             case jugador === 2 && maquina === 1:
             case jugador === 3 && maquina === 2:
-                // Ganaste
                 this.vidasMaquina--;
                 break;
 
             case jugador === 1 && maquina === 2:
             case jugador === 2 && maquina === 3:
             case jugador === 3 && maquina === 1:
-                // Perdiste
                 this.vidasJugador--;
                 break;
         }
     }
 
-    // Verificar si alguien ha ganado
     if (this.vidasJugador === 0) {
-        // El jugador ha perdido
         this.mostrarResultado("¡La máquina ha ganado!");
     } else if (this.vidasMaquina === 0) {
-        // La máquina ha perdido
         this.mostrarResultado("¡Has ganado!");
     }
 }
 
 mostrarResultado(resultado: string): void {
-    // Mostrar el mensaje de resultado y la opción de jugar de nuevo
     alert(resultado);
-    // Reiniciar el juego
     this.reiniciarJuego();
 }
 
 reiniciarJuego(): void {
-    // Reiniciar las vidas del jugador y la máquina
     this.vidasJugador = 5;
     this.vidasMaquina = 5;
-    // Ocultar la imagen
     this.mostrarImagenes = false;
-    // Reiniciar la imagen seleccionada
     this.imagenFija = null;
 }
 

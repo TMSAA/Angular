@@ -1,3 +1,8 @@
-<div class="casilla" (click)="onCasillaClick()">
-  {{ tieneMina ? '💣' : (minasCercanas > 0 ? minasCercanas : '') }}
+<div class="casilla" (click)="onCasillaClick()" [ngClass]="{ 'disabled': gameOver }">
+  <span>
+    <span *ngIf="revelada">
+      <span *ngIf="tieneMina">💣</span>
+      <span *ngIf="!tieneMina">{{ minasCercanas }}</span>
+    </span>
+  </span>
 </div>

@@ -60,9 +60,8 @@ export class PiedraPapelTijeraComponent {
       setTimeout(() => {
         this.imagenFija = null;
 
-        // Determina la elección aleatoria de la máquina y compara con la elección del jugador
         const maquina = this.indiceActual + 1;
-        const jugador = parseInt(boton.substr(boton.length - 1), 10); // Extrae el número del botón seleccionado
+        const jugador = parseInt(boton.substr(boton.length - 1), 10); 
 
         this.juego(jugador, maquina);
       }, 1000);

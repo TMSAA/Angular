@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .opcion {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease; 
+  }
+  
+  .opcion img {
+    width: 500px; 
+  }
+  
+  .opcion:hover {
+    transform: scale(1.3); 
+  }

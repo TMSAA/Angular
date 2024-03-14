@@ -1,0 +1,22 @@
+.menu{
+    height: 900px;
+    width: 1600px;
+    background-color: rgb(30, 29, 29);
+    text-align: center; 
+}
+.boton{
+    margin-top: 400px;
+    margin-left: 190px;
+    margin-right: 200px;
+    height: 100px;
+    width: 140px;
+    background-color: #FFD700;
+    border-radius: 20px;
+}
+.container {
+    background-color: #FFD700;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+  }

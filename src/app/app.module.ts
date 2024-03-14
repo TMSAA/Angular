@@ -11,6 +11,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { TresEnRayaComponent } from './tres-en-raya/tres-en-raya.component';
 import { CasillaComponent } from './casilla/casilla.component';
 import { BuscaMinasComponent } from './busca-minas/busca-minas.component';
+import { MenuComponent } from './menu/menu.component';
+import { MuneJuegosComponent } from './mune-juegos/mune-juegos.component';
+import { CurriculumComponent } from './curriculum/curriculum.component';
+import { ExplicacionesComponent } from './explicaciones/explicaciones.component';
 
 
 
@@ -24,6 +28,10 @@ import { BuscaMinasComponent } from './busca-minas/busca-minas.component';
     TresEnRayaComponent,
     CasillaComponent,
     BuscaMinasComponent,
+    MenuComponent,
+    MuneJuegosComponent,
+    CurriculumComponent,
+    ExplicacionesComponent,
     
   ],
   imports: [
